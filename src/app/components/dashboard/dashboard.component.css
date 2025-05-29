@@ -1,0 +1,77 @@
+.dashboard-container {
+    padding: 20px;
+    text-align: center;
+  }
+  
+  h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  .summary {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+  }
+  
+  .summary-item {
+    padding: 20px;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 16px;
+    font-weight: bold;
+    width: 150px;
+    color: white;
+    cursor: pointer; /* Make the boxes clickable */
+  }
+  
+  .summary-item.available {
+    background-color: green;
+  }
+  
+  .summary-item.booked {
+    background-color: red;
+  }
+  
+  .summary-item.reserved {
+    background-color: yellow;
+    color: black;
+  }
+  
+  .filtered-slots {
+    margin-top: 20px;
+  }
+  
+  .slots {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+  }
+  
+  .slot {
+    width: 120px;
+    height: 120px;
+    border-radius: 5px;
+    text-align: center;
+    line-height: 1.5;
+    font-size: 14px;
+    font-weight: bold;
+    color: white;
+    padding: 10px;
+  }
+  
+  .slot.available {
+    background-color: green;
+  }
+  
+  .slot.booked {
+    background-color: red;
+  }
+  
+  .slot.reserved {
+    background-color: yellow;
+    color: black;
+  }

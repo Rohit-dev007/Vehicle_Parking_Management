@@ -1,0 +1,13 @@
+<div class="navbar">
+  <span class="menu-icon" (click)="toggleMenu()">☰</span>
+  <span class="app-title">My Parking</span>
+  <button class="parking-status-button" (click)="navigateToParkingStatus()">Parking Status</button>
+  <button class="dashboard-button" (click)="navigateToDashboard()">Dashboard</button>
+  <button class="login-button" (click)="navigateToLogin()">Login</button>
+</div>
+<div class="menu" *ngIf="menuVisible">
+  <a routerLink="/parking-status">Parking Status</a>
+</div>
+<main>
+  <router-outlet></router-outlet>
+</main>

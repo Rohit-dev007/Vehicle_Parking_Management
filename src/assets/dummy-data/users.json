@@ -1,0 +1,17 @@
+[
+  {
+    "username": "user1",
+    "password": "password1",
+    "role": "user"
+  },
+  {
+    "username": "entryOperator",
+    "password": "entryPass",
+    "role": "entry gate operator"
+  },
+  {
+    "username": "exitOperator",
+    "password": "exitPass",
+    "role": "exit gate operator"
+  }
+]

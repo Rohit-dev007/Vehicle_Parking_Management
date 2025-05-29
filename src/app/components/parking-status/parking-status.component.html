@@ -1,0 +1,26 @@
+<div class="parking-status-container">
+  <h2>Parking Slots</h2>
+  <div class="slots">
+    <div
+      class="slot"
+      *ngFor="let slot of parkingSlots"
+      [ngClass]="{
+        'available': slot.status === 'Available',
+        'reserved': slot.status === 'Reserved',
+        'booked': slot.status === 'Booked'
+      }"
+      (click)="selectSlot(slot)"
+    >
+      <p>Slot {{ slot.id }}</p>
+      <p>Vehicle: {{ slot.vehicleNumber || 'None' }}</p>
+      <p>Status: {{ slot.status }}</p>
+    </div>
+  </div>
+
+  <div *ngIf="selectedSlot && isLoggedIn" class="booking-form">
+    <h3>Booking Slot {{ selectedSlot.id }}</h3>
+    <label for="vehicleNumber">Enter Vehicle Number:</label>
+    <input id="vehicleNumber" [(ngModel)]="vehicleNumber" type="text" />
+    <button (click)="bookSlot()">Book Slot</button>
+  </div>
+</div>

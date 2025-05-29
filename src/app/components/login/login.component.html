@@ -1,0 +1,13 @@
+<div class="login-container">
+    <h2>Login</h2>
+  
+    <input id="username" [(ngModel)]="username" type="text" placeholder="Username" />
+    <input id="password" [(ngModel)]="password" type="password" placeholder="Password" />
+  
+    <select [(ngModel)]="selectedRole">
+      <option *ngFor="let role of roles" [value]="role">{{ role }}</option>
+    </select>
+  
+    <button (click)="login()">Login</button>
+  </div>
+  

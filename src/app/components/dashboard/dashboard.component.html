@@ -1,0 +1,28 @@
+<div class="dashboard-container">
+  <h2>Parking Slot Summary</h2>
+  <div class="summary">
+    <div class="summary-item available" (click)="filterSlots('Available')">
+      <p>Available Slots</p>
+      <p>{{ availableCount }}</p>
+    </div>
+    <div class="summary-item booked" (click)="filterSlots('Booked')">
+      <p>Booked Slots</p>
+      <p>{{ bookedCount }}</p>
+    </div>
+    <div class="summary-item reserved" (click)="filterSlots('Reserved')">
+      <p>Reserved Slots</p>
+      <p>{{ reservedCount }}</p>
+    </div>
+  </div>
+
+  <div class="filtered-slots" *ngIf="filteredSlots.length > 0">
+    <h3>Filtered Slots</h3>
+    <div class="slots">
+      <div class="slot" *ngFor="let slot of filteredSlots">
+        <p>Slot {{ slot.id }}</p>
+        <p>Status: {{ slot.status }}</p>
+        <p>Vehicle: {{ slot.vehicleNumber || 'None' }}</p>
+      </div>
+    </div>
+  </div>
+</div>
