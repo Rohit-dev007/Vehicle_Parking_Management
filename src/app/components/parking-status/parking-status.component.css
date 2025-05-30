@@ -123,5 +123,125 @@
     padding: 10px;
     cursor: pointer;
   }
+  .slots {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
   
- 
+  .slot {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 16px;
+    width: 200px;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .slot-actions {
+    margin-top: 12px;
+  }
+  
+  .slot-actions button {
+    margin: 4px 0;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .slot-actions button:first-child {
+    background-color: #007bff;
+    color: white;
+  }
+  
+  .slot-actions button:last-child {
+    background-color: #dc3545;
+    color: white;
+  }
+  
+  .slot-actions button:hover {
+    opacity: 0.9;
+  }
+  .slot {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 16px;
+    width: 200px;
+    text-align: center;
+    position: relative;
+  }
+  
+  .slot-actions {
+    margin-top: 12px;
+  }
+  
+  .popup {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 16px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 10;
+    width: 180px;
+  }
+  
+  .popup button {
+    margin-top: 8px;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .popup button:first-child {
+    background-color: #007bff;
+    color: white;
+  }
+  
+  .popup button:last-child {
+    background-color: #dc3545;
+    color: white;
+  }
+  
+.popup input, .popup label {
+  display: block;
+  width: 90%;
+  margin-bottom: 8px;
+  padding: 8px;
+  /* border: 1px solid #ccc; */
+  border-radius: 4px;
+  font-size: 14px;
+  color: #333;
+}
+.popup {
+  width: 600px; /* Adjusted width for better fit */
+  max-width: 120%; /* Ensures it fits smaller screens */
+  padding: 16px; /* Reduced padding for compact spacing */
+  margin: 0 auto; /* Centers the popup horizontally */
+  box-sizing: border-box; /* Ensures padding doesn't affect width */
+  background-color: #fff; /* Ensures a clean background */
+  border: 1px solid #ccc; /* Adds a subtle border */
+  border-radius: 8px; /* Smooth corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adds a shadow for depth */
+}
+
+.popup label {
+  font-weight: bold;
+  margin-bottom: 4px;
+  color: #555;
+}
+
+.popup input {
+  background-color: #f9f9f9;
+}
+
+.popup input:focus {
+  outline: none;
+  border-color: #007bff;
+  background-color: #fff;
+}

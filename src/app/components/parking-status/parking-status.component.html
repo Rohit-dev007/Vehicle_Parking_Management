@@ -9,18 +9,33 @@
         'reserved': slot.status === 'Reserved',
         'booked': slot.status === 'Booked'
       }"
-      (click)="selectSlot(slot)"
     >
-      <p>Slot {{ slot.id }}</p>
+      <p><strong>Slot {{ slot.id }}</strong></p>
       <p>Vehicle: {{ slot.vehicleNumber || 'None' }}</p>
       <p>Status: {{ slot.status }}</p>
-    </div>
-  </div>
+      <div class="slot-actions">
+        <button *ngIf="slot.status === 'Available'" (click)="selectSlot(slot)">Book/Reserve</button>
+        <button *ngIf="slot.status !== 'Available'" (click)="cancelSlot(slot)">Cancel</button>
+      </div>
 
-  <div *ngIf="selectedSlot && isLoggedIn" class="booking-form">
-    <h3>Booking Slot {{ selectedSlot.id }}</h3>
-    <label for="vehicleNumber">Enter Vehicle Number:</label>
-    <input id="vehicleNumber" [(ngModel)]="vehicleNumber" type="text" />
-    <button (click)="bookSlot()">Book Slot</button>
+      <!-- Popup for booking details -->
+      <div *ngIf="selectedSlot?.id === slot.id" class="popup">
+        <h3>Booking Slot {{ slot.id }}</h3>
+        <label for="vehicleNumber">Enter Vehicle Number:</label>
+        <input id="vehicleNumber" [(ngModel)]="vehicleNumber" type="text" />
+
+        <label for="fromDate">From Date and Time:</label>
+        <input id="fromDate" [(ngModel)]="fromDate" type="datetime-local" />
+
+        <label for="toDate">To Date and Time:</label>
+        <input id="toDate" [(ngModel)]="toDate" type="datetime-local" />
+
+        <label for="mobileNumber">Enter Mobile Number:</label>
+        <input id="mobileNumber" [(ngModel)]="mobileNumber" type="text" />
+
+        <button (click)="bookSlot()">Book Slot</button>
+        <button (click)="closePopup()">Close</button>
+      </div>
+    </div>
   </div>
 </div>
